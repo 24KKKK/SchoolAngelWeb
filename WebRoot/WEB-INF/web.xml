@@ -6,7 +6,7 @@
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   
   <welcome-file-list>
-    <welcome-file>WEB-INF\jsp\Order.jsp</welcome-file>
+    <welcome-file>jsp\Order.jsp</welcome-file>
   </welcome-file-list>
   
   <display-name></display-name>
@@ -14,10 +14,28 @@
     <servlet-name>SubmitServlet</servlet-name>
     <servlet-class>servlet.SubmitServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>QueryByFoodnum</servlet-name>
+    <servlet-class>servlet.QueryByFoodnum</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryAll</servlet-name>
+    <servlet-class>servlet.QueryAll</servlet-class>
+  </servlet>
+
+
 
   <servlet-mapping>
     <servlet-name>SubmitServlet</servlet-name>
     <url-pattern>/servlet/SubmitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryByFoodnum</servlet-name>
+    <url-pattern>/servlet/QueryByFoodnum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryAll</servlet-name>
+    <url-pattern>/servlet/QueryAll</url-pattern>
   </servlet-mapping>	
   
   

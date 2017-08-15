@@ -45,9 +45,11 @@ public class SubmitServlet extends HttpServlet {
 			int i = db.executeUpdate(insertSql);
 			if (i == 1) {
 				Syso.p("数据插入成功。");
-				response.setHeader("refresh", "0;url=../WEB-INF/jsp/Success.jsp");
+				db.close();
+				response.setHeader("refresh", "0;url=../jsp/Success.jsp");
 			} else {
 				Syso.p("数据插入失败。");
+				db.close();
 				response.setHeader("refresh", "0;url=../WEB-INF/jsp/Fail.jsp");
 			}
 		}
