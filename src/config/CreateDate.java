@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CreateDate {
-	//生成时间串，2017-0-802 10:35:09
+	//生成时间串，2017-08-02 10:35:09
 	public static String getDate() {
 		String DATETIME;   //时间日期
 	    Date date = new Date();

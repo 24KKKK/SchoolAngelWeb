@@ -11,6 +11,7 @@
 请输入菜品号<input style="width:50px" type="text" name="foodnum" id="foodnum">
 <input type="submit" name="submitquerybyfoodnum" id="submitquerybyfoodnum" value="查询单个"><br /><br />
 </form>
+
 <form action="../servlet/QueryAll" method="post">
 <input type="submit" name="submitqueryall" id="submitqueryall" value="查询全部">
 </form>

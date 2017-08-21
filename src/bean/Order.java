@@ -1,13 +1,35 @@
 package bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable{
 	private String foodNum;
 	private String apartNum;
 	private String dormitoryNum;
 	private String orderName;
 	private Date date;
+	
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Order (String foodnum,String apartnum,String dormitorynum,String ordername,Date date) {
+		super();
+		this.foodNum = foodnum;
+		this.apartNum = apartnum;
+		this.dormitoryNum = dormitorynum;
+		this.orderName = ordername;
+		this.date = date;
+	}
+	
+	public Order (String foodnum,String apartnum,String dormitorynum) {
+		super();
+		this.foodNum = foodnum;
+		this.apartNum = apartnum;
+		this.dormitoryNum = dormitorynum;
+	}
 	
 	public String getFoodNum() {
 		return foodNum;
