@@ -9,6 +9,7 @@ public class Order implements Serializable{
 	private String dormitoryNum;
 	private String orderName;
 	private Date date;
+	private String count;  //汇总人查询的各菜品数量
 	
 	public Order() {
 		super();
@@ -24,12 +25,20 @@ public class Order implements Serializable{
 		this.date = date;
 	}
 	
+	//汇总人  查询单个和全部记录
 	public Order (String foodnum,String apartnum,String dormitorynum) {
 		super();
 		this.foodNum = foodnum;
 		this.apartNum = apartnum;
 		this.dormitoryNum = dormitorynum;
 	}
+	
+	//汇总人  查询各菜品数量
+		public Order (String foodnum,String count) {
+			super();
+			this.foodNum = foodnum;
+			this.count = count;
+		}
 	
 	public String getFoodNum() {
 		return foodNum;
@@ -60,6 +69,13 @@ public class Order implements Serializable{
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public String getCount() {
+		return count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
 	}
 	
 }

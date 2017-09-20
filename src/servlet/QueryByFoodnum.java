@@ -40,8 +40,8 @@ public class QueryByFoodnum extends HttpServlet {
 				String mindate = maxdate.substring(0, 10)+" 00:00:00";
 				DBBean db = new DBBean();
 				Syso.p("要查询的foodnum为："+foodNum);
-				//String queryByFoodnumSql = "select foodnum,apartnum,dormitorynum from table_order where foodnum = "+foodNum+" and date <= "+"'"+maxdate+"'"+ " and date >="+"'"+mindate+"'"+" order by apartnum desc";
-				String queryByFoodnumSql = "select foodnum,apartnum,dormitorynum from table_order where foodnum = 5 and date <= '2017-08-15 21:27:43' and date >='2017-08-15 00:00:00' order by apartnum asc";
+				String queryByFoodnumSql = "select foodnum,apartnum,dormitorynum from table_order where foodnum = "+foodNum+" and date <= "+"'"+maxdate+"'"+ " and date >="+"'"+mindate+"'"+" order by apartnum asc";
+				//String queryByFoodnumSql = "select foodnum,apartnum,dormitorynum from table_order where foodnum = 5 and date <= '2017-08-15 21:27:43' and date >='2017-08-15 00:00:00' order by apartnum asc";
 				Syso.p("queryByFoodnumSql="+queryByFoodnumSql);
 				//ResultSet rs = db.executeQuery(queryByFoodnumSql);
 				ResultSet rs = db.executeQuery(queryByFoodnumSql);

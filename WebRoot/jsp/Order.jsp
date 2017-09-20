@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 <title>填写订单</title>
 </head>
 <body>
 
-	<form name="form1" id="form1" method="post" action="servlet/SubmitServlet">
+	<form name="form1" id="form1" method="post" action="../servlet/SubmitServlet">
 
-		<p>请输入菜品号：</p>
+		<p width="">请输入菜品号：</p>
 		<input type="text" name="foodnum" id="foodnum">
 		<p>请输入楼号：</p>
 		<input type="text" name="apartnum" id="apartnum">

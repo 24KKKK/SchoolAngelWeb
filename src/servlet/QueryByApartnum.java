@@ -15,35 +15,34 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.DBBean;
 import bean.Order;
-
 import config.CreateDate;
 import config.Syso;
 
-public class QueryAll extends HttpServlet {
+public class QueryByApartnum extends HttpServlet {
 
-	public QueryAll() {
+	public QueryByApartnum() {
 		super();
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Syso.p("根据apartnum查询*************************************");
 		request.setCharacterEncoding("utf-8");
-		Syso.p("查询全部*************************************");
 		PreparedStatement ps = null;
 		//Connection conn = null;
-		String submitqueryall = request.getParameter("submitqueryall");
-			if (submitqueryall != null && !submitqueryall.equals("")) {
-				//int foodNum = Integer.parseInt(request.getParameter("foodnum"));
+		String submitQueryByApartnum = request.getParameter("submitquerybyapartnum");
+			if (submitQueryByApartnum != null && !submitQueryByApartnum.equals("")) {
+				int apartNum = Integer.parseInt(request.getParameter("apartnum"));
+				Syso.p("要查询的apartnum为："+apartNum);
 				List<Order> orderList = new ArrayList<Order>();
 				String maxdate = CreateDate.getDate();
 				String mindate = maxdate.substring(0, 10)+" 00:00:00";
 				DBBean db = new DBBean();
-				//Syso.p("要查询的foodnum为："+foodNum);
-				String queryAllSql = "select foodnum,apartnum,dormitorynum from table_order where date <= "+"'"+maxdate+"'"+ " and date >="+"'"+mindate+"'"+" order by foodnum asc,apartnum asc";
-				//String queryAllSql = "select foodnum,apartnum,dormitorynum from table_order where date <= '2017-08-15 21:27:43' and date >='2017-08-15 00:00:00' order by foodnum asc,apartnum asc";
-				Syso.p("queryAllSql="+queryAllSql);
-				//ResultSet rs = db.executeQuery(queryAllSql);
-				ResultSet rs = db.executeQuery(queryAllSql);
+				String queryByApartnumSql = "select foodnum,apartnum,dormitorynum from table_order where apartnum = "+apartNum+" and date <= "+"'"+maxdate+"'"+ " and date >="+"'"+mindate+"'"+" order by foodnum asc";
+				//String queryByApartnumSql = "select foodnum,apartnum,dormitorynum from table_order where apartnum = "+apartNum+" and date <= "+"'"+maxdate+"'"+ " and date >="+"'"+mindate+"'"+" order by foodnum asc";
+				Syso.p("queryByApartnumSql="+queryByApartnumSql);
+				//ResultSet rs = db.executeQuery(queryByFoodnumSql);
+				ResultSet rs = db.executeQuery(queryByApartnumSql);
 				try {
 					while(rs.next()) {
 						String fnum = rs.getString("foodnum");
@@ -53,7 +52,7 @@ public class QueryAll extends HttpServlet {
 						orderList.add(order);
 					}
 					request.setAttribute("orderList", orderList);
-					request.getRequestDispatcher("../jsp/ShowAll.jsp").forward(request, response);
+					request.getRequestDispatcher("../jsp/ShowByApartnum.jsp").forward(request, response);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

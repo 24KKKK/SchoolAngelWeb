@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-<title>显示全部</title>
+<title>显示各菜品数量</title>
 </head>
 <body>
 
@@ -15,14 +15,9 @@
 
 <table>
 	<tr>
-		<th>序号</th>
 		<th>菜品号</th>
-		<th>楼号</th>
-		<th>宿舍号</th>
+		<th>数量</th>
 	</tr>
-	
-
- 
     <%  
     Object obj = request.getAttribute("orderList");  
     List<Order> orderList = null;
@@ -30,29 +25,18 @@
         orderList = (List<Order>)obj;  
     }  
     String foodnum = null;
-    String apartnum = null;
-    String dormitorynum = null;
-    int num = 1;
+    String count = null;
     if(orderList!=null){  
         for(Order order:orderList){  
              foodnum = order.getFoodNum(); 
-             apartnum = order.getApartNum();
-             dormitorynum = order.getDormitoryNum();
-             
+             count = order.getCount();
             %>
-            
-            	
-            		
             			<tr>
-            			<td><%=num++ %></td>
             				<td><%=foodnum %></td>
-            				<td><%=apartnum %></td>
-            				<td><%=dormitorynum %></td>
+            				<td><%=count %></td>
             			</tr>  
-            		
             <%  
         }  
-        
     }  
     else{
     	out.println("没有记录");

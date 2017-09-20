@@ -6,9 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 <title>根据菜品号显示</title>
 </head>
 <body>
+
+<br /><a href="../jsp/Query.jsp">返回上一页</a><br /><br />
+
 <table>
 	<tr>
 		<th>序号</th>
@@ -50,6 +54,9 @@
         }  
         
     }  
+    else{
+    	out.println("没有记录。");
+    }
     %>  
      
 </table>

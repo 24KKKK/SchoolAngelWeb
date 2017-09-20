@@ -5,9 +5,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   
-  <welcome-file-list>
+  <!-- <welcome-file-list>
     <welcome-file>jsp\Order.jsp</welcome-file>
-  </welcome-file-list>
+  </welcome-file-list> -->
   
   <display-name></display-name>
   <servlet>
@@ -22,7 +22,14 @@
     <servlet-name>QueryAll</servlet-name>
     <servlet-class>servlet.QueryAll</servlet-class>
   </servlet>
-
+  <servlet>
+    <servlet-name>QueryCount</servlet-name>
+    <servlet-class>servlet.QueryCount</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryByApartnum</servlet-name>
+    <servlet-class>servlet.QueryByApartnum</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -36,6 +43,14 @@
   <servlet-mapping>
     <servlet-name>QueryAll</servlet-name>
     <url-pattern>/servlet/QueryAll</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryCount</servlet-name>
+    <url-pattern>/servlet/QueryCount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryByApartnum</servlet-name>
+    <url-pattern>/servlet/QueryByApartnum</url-pattern>
   </servlet-mapping>	
   
   
